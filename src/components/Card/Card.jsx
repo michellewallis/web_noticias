@@ -7,9 +7,13 @@ class Card extends Component {
       render() {
         return <div>
           <h1>{this.props.data.title}</h1>
-          <p>{this.props.data.section}</p>
-          <p>{this.props.data.abstract}</p>
-          <p>{this.props.data.published_date}</p>
+          <p> Sección:{this.props.data.section}</p>
+          <p> Descripción:{this.props.data.abstract}</p>
+          <p> Fecha:{this.props.data.published_date}</p>
+          
+
+          <button onClick={this.props.delete}>Borrar</button>
+
         </div>;
       }
 }

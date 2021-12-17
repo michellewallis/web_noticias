@@ -4,7 +4,7 @@ import Card from "../Card";
 class ListNews extends Component {
 
   paintNews = () =>{   
-    return this.props.pintar.map((a,i)=> <Card data={a} key={i}/>)
+    return this.props.pintar.map((a,i)=> <Card data={a} delete={()=>this.props.delete(i)} key={i}/>)
   }
 
   render() {

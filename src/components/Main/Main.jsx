@@ -25,6 +25,9 @@ class Main extends Component {
         "title" : e.title,
         "published_date" : e.published_date,
         "abstract" : e.abstract
+        
+        
+        
       
     }})
     
@@ -39,7 +42,11 @@ class Main extends Component {
     this.setState({allNews: [...this.state.allNews, input]})
   }
 
-
+  deleteNew = (i) => {
+    //Me quedo con todos los elementos distintos al parametro que me estan dando.
+    const news = this.state.allNews.filter((e,j)=>j!==i)
+    this.setState({allNews:news})
+  }
 
 
   render() {
@@ -48,7 +55,7 @@ class Main extends Component {
           <Routes>
 
             <Route path="/" element={<Home/>} exact />
-            <Route path="/ListNews" element={<ListNews pintar={this.state.allNews}/>} />
+            <Route path="/ListNews" element={<ListNews pintar={this.state.allNews} delete={this.deleteNew}/>} />
             <Route path="/form" element={<Form submit={this.createNews}/>} />
           </Routes>
 
