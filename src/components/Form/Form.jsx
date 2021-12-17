@@ -1,52 +1,65 @@
 import React, { Component } from "react";
+import {Navigate} from "react-router-dom";
 
 class Form extends Component {
-
-  constructor(props) {
-    super(props)
-
-    this.name = React.createRef();
-
-    this.state = {
-        newsList: [{}] // [{},{},{},{},{},{}] --> Para guardar los productos
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         allNews: [{}],
+         redirect: false
+      }
     }
-}
+      
 
-  createNews = (title,news) => {
 
-    const newNews = {title,news}
 
-    this.setState({ newsList: [...this.state.newsList, newNews] })
-    //alert(`Producto ${name}, precio: ${price} € Creado`)
-}
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    const title = event.target.title.value // por referencia
-    const news = event.target.news.value
-    
-    
-    // Crear noticia
-    this.createNews(title,news)
-}
+    const section = event.target.section.value
+    const title = event.target.title.value
+    const date = event.target.date.value
+    const abstrac = event.target.abstrac.value
+    const news = {section, title, date, abstrac}
+    this.props.submit(news)
+    this.setState({ redirect: true });
+
+    // <Redirect to="/" />
+
+  }
+
+
+
+
+
 
   render() {
+    const { redirect } = this.state;
+
+    if (redirect === true) {
+      return <Navigate to='/ListNews'/>;
+    }
+
     return <div>
-       <h2>Alta de Nueva Noticia</h2>
 
-<form onSubmit={this.handleSubmit}>
-    <label htmlFor="title">Titulo:</label><br/>
-    <input type="text" name="title"/><br />
-    <label htmlFor="news">Noticia:</label><br/>
-    <input type="text" name="news"/><br/>
-    <input type="submit"/>
-</form> 
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="section">Indroduzca la Sección</label><br />
+        <input type="text" id="section" name="section" required="required" /><br />
 
+        <label htmlFor="title">Introduzca el titulo de la noticia</label><br />
+        <input type="text" id="title" name="title" required="required" /><br />
 
-    </div>;
+        <label htmlFor="date">Fecha de su noticia</label><br />
+        <input type="text" id="date" name="date" required="required" /><br />
 
+        <label htmlFor="abstrac">Indroduzca la descripción de la noticia:</label><br />
+        <input type="text" id="abstrac" name="abstrac"  required="required"/><br />
 
-
+        <input type="submit"  value="Añadir Noticia" />
+    </form>     
+      
+      </div>;
   }
 }
 

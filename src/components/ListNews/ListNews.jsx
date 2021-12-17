@@ -1,31 +1,24 @@
 import React, { Component } from "react";
-
+import Card from "../Card";
 
 class ListNews extends Component {
-  constructor(props) {
-    super(props)
 
-    this.name = React.createRef();
-
-    this.state = {
-        apiNews: [{}] // [{},{},{},{},{},{}] --> Para guardar los productos
-    }
-}
-
-
-const getPokemons = async () =>{
-  const resp = await axios.get('https://pokeapi.co/api/v2/pokemon');
-  console.log(data)
-  setPokemons(resp.data.result);
-}
-
-
-
-
+  paintNews = () =>{   
+    return this.props.pintar.map((a,i)=> <Card data={a} key={i}/>)
+  }
 
   render() {
-    return <div>ListNews</div>;
-  }
+    return <article>
+      <h1>Esta es la Lista de las Noticias :</h1>
+      <>
+      {this.paintNews()}
+
+      </>
+    </article>
 }
+
+}
+
+
 
 export default ListNews;

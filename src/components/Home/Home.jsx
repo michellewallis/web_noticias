@@ -1,30 +1,20 @@
 import React, { Component } from "react";
-
-
+import {userContext} from '../../context/userContext'
 
 class Home extends Component {
 
-
+static contextType = userContext
   
-  constructor(props) {
-    super(props)
-    
-    this.name = React.createRef(); // crear la referencia
-    this.state = {
-      name:""
-    }
-  }
   
 
   handleSubmit = event => {
     event.preventDefault();
-    const name = this.name.current.value // por referencia   
-    this.setState({name})
-  
+    const name = event.target.elements.name.value
 
-  // const {login} = this.context
+    const {login} = this.context
 
-  // login(name);
+    login(name)
+   
 
   }
 
@@ -32,7 +22,7 @@ class Home extends Component {
     return <div>
         <form onSubmit={this.handleSubmit}>
         <label htmlFor="name">Nombre:</label><br/>
-        <input type="text" id="name" name="name" ref={this.name}/><br />
+        <input type="text" id="name" name="name"/><br />
         <input type="submit" />
         </form>
 
