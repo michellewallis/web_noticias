@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../Card";
+import './ListNews.css'
 
 class ListNews extends Component {
 
@@ -9,7 +10,7 @@ class ListNews extends Component {
 
   render() {
     return <article>
-      <h1>Esta es la Lista de las Noticias :</h1>
+      <h1 className="newList">Esta es la Lista de las Noticias :</h1>
       <>
       {this.paintNews()}
 

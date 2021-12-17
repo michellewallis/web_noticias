@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Nav from '../Nav'
 import {userContext} from '../../context/userContext'// Usamos context
 import './Header.css'
+import logo from "../../assets/logo.png";
 
 
 
@@ -11,12 +12,13 @@ class Header extends Component {
     
     return(
         <header className="header">
+            <img src={logo} alt="logo"/>
             <Nav/>
             <userContext.Consumer>
             {
                 value => <>
-                    <h2>Bienvenido {value.user}</h2>
-                    <button onClick={value.logout}>Salir</button>
+                    <h2 className="welcome">Bienvenido {value.user}</h2>
+                    <button className="out" onClick={value.logout}>Salir</button>
                 </>
             }
 

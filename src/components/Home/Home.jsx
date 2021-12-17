@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {userContext} from '../../context/userContext'
+import './Home.css'
+
 
 class Home extends Component {
 
@@ -19,12 +21,12 @@ static contextType = userContext
   }
 
   render() {
-    return <div>
-        <form onSubmit={this.handleSubmit}>
-          <h3>Inicie sesión</h3>
+    return <div className="signup">
+        <form className="form" onSubmit={this.handleSubmit}>
+          <h3>Inicia sesión</h3>
         <label htmlFor="name">Nombre:</label><br/>
-        <input type="text" id="name" name="name"/><br /> 
-        <input type="submit" />
+        <input className="campo" type="text" id="name" name="name"/><br /> 
+        <input className="send" type="submit" />
         </form>
 
     </div>;

@@ -1,0 +1,25 @@
+.header {
+    background-color: rgb(243, 140, 71);
+    
+}
+.out{
+    
+    display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+
+img{
+    width:15%;
+}

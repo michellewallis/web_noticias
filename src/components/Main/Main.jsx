@@ -16,7 +16,7 @@ class Main extends Component {
 
 
   async componentDidMount() {
-    const response = await axios.get("https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=coCeAhcUAgpRYTnHCuZkPyMUQ2lz5j3A");
+    const response = await axios.get(`https://api.nytimes.com/svc/mostpopular/v2/viewed/7.json?api-key=${process.env.REACT_APP_KEY}`);
     const data = response.data.results;
     console.log(data)
 
@@ -43,7 +43,7 @@ class Main extends Component {
   }
 
   deleteNew = (i) => {
-    //Me quedo con todos los elementos distintos al parametro que me estan dando.
+    //Me quedo con todos los elementos distintos al parametro que me  dan.
     const news = this.state.allNews.filter((e,j)=>j!==i)
     this.setState({allNews:news})
   }
