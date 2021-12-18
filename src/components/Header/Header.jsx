@@ -12,6 +12,7 @@ class Header extends Component {
     
     return(
         <header className="header">
+            
             <img src={logo} alt="logo"/>
             <Nav/>
             <userContext.Consumer>

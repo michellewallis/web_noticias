@@ -1,7 +1,10 @@
 .header {
     background-color: rgb(243, 140, 71);
+   
     
 }
+
+
 .out{
     
     display: inline-block;
@@ -21,5 +24,16 @@
 
 
 img{
-    width:15%;
+width:17%;
+
+display: flex;
+justify-content: center;
+
+margin-left: auto;
+
+margin-right: auto;
+
+
+
+
 }
