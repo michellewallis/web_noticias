@@ -17,10 +17,10 @@ class Header extends Component {
             <Nav/>
             <userContext.Consumer>
             {
-                value => <>
+                value => <div className="saludo">
                     <h2 className="welcome">Bienvenido {value.user}</h2>
                     <button className="out" onClick={value.logout}>Salir</button>
-                </>
+                </div>
             }
 
             </userContext.Consumer>

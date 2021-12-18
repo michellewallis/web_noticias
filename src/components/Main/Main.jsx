@@ -24,7 +24,8 @@ class Main extends Component {
         "section": e.section,
         "title" : e.title,
         "published_date" : e.published_date,
-        "abstract" : e.abstract
+        "abstract" : e.abstract,
+       
         
         
         
@@ -55,7 +56,7 @@ class Main extends Component {
           <Routes>
 
             <Route path="/" element={<Home/>} exact />
-            <Route path="/ListNews" element={<ListNews pintar={this.state.allNews} delete={this.deleteNew}/>} />
+            <Route path="/ListNews" element={<ListNews paint={this.state.allNews} delete={this.deleteNew}/>} />
             <Route path="/form" element={<Form submit={this.createNews}/>} />
           </Routes>
 

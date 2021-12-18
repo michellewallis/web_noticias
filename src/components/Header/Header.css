@@ -19,9 +19,15 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  
 }
 
-
+.saludo{
+    padding-left: 85%;
+    background-color: whitesmoke;
+    font-size: 0,3rem;
+    
+}
 
 img{
 width:17%;

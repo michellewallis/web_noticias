@@ -1,8 +1,18 @@
 .news{
-    background: lightgray;
-    width: 70%
+    background-color: #F5FBF3;
+    width: 64%;
+    margin: 4.6rem auto;
+    height: 8rem;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #DECCCA;
+    height: auto;
     
 
+}
+
+.titular{
+    font-size: 2rem;
 }
 
 .delete{

@@ -23,7 +23,7 @@ static contextType = userContext
   render() {
     return <div className="signup">
         <form className="form" onSubmit={this.handleSubmit}>
-          <h3>Inicia sesión</h3>
+          <h3 className="login">Inicia sesión</h3>
         <label htmlFor="name">Nombre:</label><br/>
         <input className="campo" type="text" id="name" name="name"/><br /> 
         <input className="send" type="submit" />

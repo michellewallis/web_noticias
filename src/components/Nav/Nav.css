@@ -1,19 +1,27 @@
-.nav> ul {
+.title{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 1rem;
+    font-size: 4rem;
+    color: #020202;
+}
+
+
+ul{
     display: flex;
-    align-content: space-between;
     flex-direction: row;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: space-evenly;
+    padding: 2rem 0rem;
+    margin-top: 0;
 }
 
-.nav> ul > li{
-        margin: 5px;
-        list-style: none;
+li{
+    list-style: none;
+    text-decoration: none;
+    font-size: 25px;
 }
 
-.nav> ul > li > a{
-            font-size: 20px;
-            text-decoration: none;
-            color: rgb(37, 35, 35);
-        }
-
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #111110;
+}
