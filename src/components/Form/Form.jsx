@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Navigate} from "react-router-dom";
+import './Form.css'
 
 class Form extends Component {
     constructor(props) {
@@ -25,8 +26,7 @@ class Form extends Component {
     this.props.submit(news)
     this.setState({ redirect: true });
 
-    // <Redirect to="/" />
-
+    
   }
 
 
@@ -43,7 +43,7 @@ class Form extends Component {
 
     return <div>
 
-      <form onSubmit={this.handleSubmit}>
+      <form className="crear" onSubmit={this.handleSubmit}>
         <label htmlFor="section">Indroduzca la Sección</label><br />
         <input type="text" id="section" name="section" required="required" /><br />
 
@@ -56,7 +56,7 @@ class Form extends Component {
         <label htmlFor="abstrac">Indroduzca la descripción de la noticia:</label><br />
         <input type="text" id="abstrac" name="abstrac"  required="required"/><br />
 
-        <input type="submit"  value="Añadir Noticia" />
+        <input className="button" type="submit"  value="Añadir Noticia" />
     </form>     
       
       </div>;
